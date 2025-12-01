@@ -7,6 +7,8 @@ export default async function HomePage() {
   const viewportWidth = requestHeaders.get('sec-ch-viewport-width');
 
   const width = viewportWidth ? parseInt(viewportWidth, 10) : null
+  console.log(width, 'width');
+  
 
   const isMobile = width !== null && width < 768
 

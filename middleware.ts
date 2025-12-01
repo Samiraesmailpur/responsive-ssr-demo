@@ -1,11 +1,7 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
 
 export function middleware() {
-  const response = NextResponse.next()
-
-  // Браузер після цього почне надсилати Viewport-Width у наступних запитах
-  response.headers.set('Accept-CH', 'Sec-CH-Viewport-Width')
-  response.headers.set('Accept-CH-Lifetime', '86400')
-
-  return response
+  const response = NextResponse.next();
+  response.headers.append('Accept-CH', 'sec-ch-viewport-width');
+  return response;
 }
