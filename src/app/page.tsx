@@ -3,11 +3,10 @@ import MobileNav from '../components/MobileNav'
 import DesktopNav from '../components/DesktopNav'
 
 export default async function HomePage() {
-  const requestHeaders = await headers();
-  const viewportWidth = requestHeaders.get('sec-ch-viewport-width');
+  const headersList = headers();
+  const viewportWidth = headersList.get('sec-ch-viewport-width');
 
   const width = viewportWidth ? parseInt(viewportWidth, 10) : null
-  console.log(width, 'width');
   
 
   const isMobile = width !== null && width < 768
@@ -20,6 +19,7 @@ export default async function HomePage() {
       <div style={{ marginTop: 20 }}>
         {isMobile ? <MobileNav /> : <DesktopNav />}
       </div>
+
 
       <p style={{ marginTop: 40 }}>
         Reload once or twice — Client Hints start working only from the

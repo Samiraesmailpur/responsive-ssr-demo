@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta httpEquiv="accept-ch" content="Sec-CH-Viewport-Width" />
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
