@@ -4,7 +4,7 @@ import DesktopNav from '../components/DesktopNav'
 
 export default async function HomePage() {
   const requestHeaders = await headers();
-  const viewportWidth = requestHeaders.get('viewport-width');
+  const viewportWidth = requestHeaders.get('sec-ch-viewport-width');
 
   const width = viewportWidth ? parseInt(viewportWidth, 10) : null
 
